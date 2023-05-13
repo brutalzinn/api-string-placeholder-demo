@@ -12,13 +12,3 @@ services:
       - ./:/app
     ports:
       - "5556:80"
-    links:
-    - "redis_service"
-    depends_on:
-    - "redis_service"
-
-
-  redis_service:
-    image: redis:6.2-alpine
-    ports:
-    - "6379:6379"
