@@ -1,10 +1,10 @@
-﻿using ApiPlaceHolderDemo.Integrations.GeradorDeDados.Models;
+﻿using ApiPlaceHolderDemo.Integrations.ApiPlaceHolderDemo.Models;
 using RestEase;
 using System.Threading.Tasks;
 
-namespace ApiPlaceHolderDemo.Integrations.GeradorDeDados
+namespace ApiPlaceHolderDemo.Integrations.ApiPlaceHolderDemo
 {
-    public interface IGeradorDeDadosApi
+    public interface IApiPlaceHolderDemoApi
     {
         [Header("ApiKey")]
         string ApiKey { get; set; }

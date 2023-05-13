@@ -1,7 +1,7 @@
 
-namespace ApiPlaceHolderDemo.Integrations.GeradorDeDados
+namespace ApiPlaceHolderDemo.Integrations.ApiPlaceHolderDemo
 {
-    public class ApiGeradorDeDadosConfig
+    public class ApiApiPlaceHolderDemoConfig
     {
         public string ApiUrl { get; set; }
         public string ApiHeader { get; set; }

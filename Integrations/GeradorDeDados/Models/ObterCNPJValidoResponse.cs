@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ApiPlaceHolderDemo.Integrations.GeradorDeDados.Models
+namespace ApiPlaceHolderDemo.Integrations.ApiPlaceHolderDemo.Models
 {
     public class ObterCNPJValidoResponse
     {

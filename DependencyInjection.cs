@@ -17,7 +17,7 @@ using Swashbuckle.AspNetCore.SwaggerGen;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using ApiPlaceHolderDemo.Integrations.GeradorDeDados;
+using ApiPlaceHolderDemo.Integrations.ApiPlaceHolderDemo;
 
 namespace ApiPlaceHolderDemo
 {
@@ -52,9 +52,9 @@ namespace ApiPlaceHolderDemo
         {
             var serviceProvider = services.BuildServiceProvider();
             var apiConfig = serviceProvider.GetRequiredService<IOptions<ApiConfig>>().Value;
-            var geradorDeDadosApiUrl = apiConfig.Integrations.ApiGeradorDeDadosConfig.ApiUrl;
-            var geradorDeDadosApiKey = apiConfig.Integrations.ApiGeradorDeDadosConfig.ApiKey;
-            services.AddRestEaseClient<IGeradorDeDadosApi>(geradorDeDadosApiUrl, new()
+            var geradorDeDadosApiUrl = apiConfig.Integrations.ApiApiPlaceHolderDemoConfig.ApiUrl;
+            var geradorDeDadosApiKey = apiConfig.Integrations.ApiApiPlaceHolderDemoConfig.ApiKey;
+            services.AddRestEaseClient<IApiPlaceHolderDemoApi>(geradorDeDadosApiUrl, new()
             {
                 InstanceConfigurer = instance => instance.ApiKey = geradorDeDadosApiKey,
             });
@@ -63,9 +63,9 @@ namespace ApiPlaceHolderDemo
         private static void InjectPlaceholderPackage(this IServiceCollection services)
         {
             var serviceProvider = services.BuildServiceProvider();
-            var apiGeradorDeDados = serviceProvider.GetRequiredService<IGeradorDeDadosApi>();
+            var apiApiPlaceHolderDemo = serviceProvider.GetRequiredService<IApiPlaceHolderDemoApi>();
             var stringPlaceHolder = new ExecutorCreator().Init()
-                .AddRange(Placeholder.ObterExecutores(apiGeradorDeDados))
+                .AddRange(Placeholder.ObterExecutores(apiApiPlaceHolderDemo))
                 .BuildDescription();
 
             services.AddSingleton<Placeholder>();

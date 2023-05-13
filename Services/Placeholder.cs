@@ -10,7 +10,7 @@ using StringPlaceholder.Models;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
-using ApiPlaceHolderDemo.Integrations.GeradorDeDados;
+using ApiPlaceHolderDemo.Integrations.ApiPlaceHolderDemo;
 
 namespace ApiPlaceHolderDemo.Services
 {
@@ -62,7 +62,7 @@ namespace ApiPlaceHolderDemo.Services
             return descricaoPlaceholders;
         }
 
-        public static List<StringExecutor> ObterExecutores(IGeradorDeDadosApi geradorDeDados)
+        public static List<StringExecutor> ObterExecutores(IApiPlaceHolderDemoApi geradorDeDados)
         {
             return new List<StringExecutor>()
             {

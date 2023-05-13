@@ -1,4 +1,4 @@
-﻿using ApiPlaceHolderDemo.Integrations.GeradorDeDados;
+﻿using ApiPlaceHolderDemo.Integrations.ApiPlaceHolderDemo;
 
 namespace ApiPlaceHolderDemo.Models.Settings
 {
@@ -19,7 +19,7 @@ namespace ApiPlaceHolderDemo.Models.Settings
 
     public class Integrations
     {
-        public ApiGeradorDeDadosConfig ApiGeradorDeDadosConfig { get; set; }
+        public ApiApiPlaceHolderDemoConfig ApiApiPlaceHolderDemoConfig { get; set; }
     }
 
 }
