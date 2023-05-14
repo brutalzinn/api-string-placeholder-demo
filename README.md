@@ -9,6 +9,11 @@
 - Process a text and return the text with placeholders
 - Generate random PDF files and images with random pixels
 
+# Swagger
+
+https://api-string-placeholder-demo.boberto.net/swagger
+ApiKey: babayaga
+
 # Web apps to test this api
 
 * [FRONT MOCK GENERATOR](https://github.com/brutalzinn/front-mock-string-placeholder)
