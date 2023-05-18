@@ -28,11 +28,11 @@ namespace ApiPlaceHolderDemo.Services
         {
 
             var newText = new ExecutorCreator()
-             .Init()
-            .AddRange(Placeholder.GetDefaultExecutors(apiPlaceHolderDemoApi))
-            .AddRange(customPlaceholders)
-            .Build(text)
-                .Result();
+                .Init()
+                .AddRange(Placeholder.GetDefaultExecutors(apiPlaceHolderDemoApi))
+                .AddRange(customPlaceholders)
+                .Build(text)
+                    .Result();
             return newText;
         }
 
