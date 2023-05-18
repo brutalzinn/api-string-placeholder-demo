@@ -16,7 +16,6 @@ internal class Program
         var app = builder.Build();
         var apiConfig = app.Services.GetRequiredService<IOptions<ApiConfig>>().Value;
         app.UseCors("corsapp");
-
         app.UseAuthentication();
         app.UseAuthorization();
         app.AddCustomExceptionHandler();

@@ -17,17 +17,21 @@ namespace ApiPlaceHolderDemo.Services
     public class Placeholder
     {
         private readonly IExecutorCreator executorCreator;
-
-        public Placeholder(IExecutorCreator executorCreator)
+        private readonly IApiPlaceHolderDemoApi apiPlaceHolderDemoApi;
+        public Placeholder(IExecutorCreator executorCreator, IApiPlaceHolderDemoApi apiPlaceHolderDemoApi)
         {
             this.executorCreator = executorCreator;
+            this.apiPlaceHolderDemoApi = apiPlaceHolderDemoApi;
         }
 
         public string GetTextWithCustomPlaceholders(string text, List<StringExecutor> customPlaceholders)
         {
-            var newText = executorCreator
-                .AddRange(customPlaceholders)
-                .Build(text)
+
+            var newText = new ExecutorCreator()
+             .Init()
+            .AddRange(Placeholder.GetDefaultExecutors(apiPlaceHolderDemoApi))
+            .AddRange(customPlaceholders)
+            .Build(text)
                 .Result();
             return newText;
         }
@@ -71,7 +75,7 @@ namespace ApiPlaceHolderDemo.Services
             return descricaoPlaceholders;
         }
 
-        public static List<StringExecutor> GetExecutors(IApiPlaceHolderDemoApi geradorDeDados)
+        public static List<StringExecutor> GetDefaultExecutors(IApiPlaceHolderDemoApi geradorDeDados)
         {
             return new List<StringExecutor>()
             {

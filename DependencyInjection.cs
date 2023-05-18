@@ -65,7 +65,7 @@ namespace ApiPlaceHolderDemo
             var serviceProvider = services.BuildServiceProvider();
             var apiApiPlaceHolderDemo = serviceProvider.GetRequiredService<IApiPlaceHolderDemoApi>();
             var stringPlaceHolder = new ExecutorCreator().Init()
-                .AddRange(Placeholder.GetExecutors(apiApiPlaceHolderDemo))
+                .AddRange(Placeholder.GetDefaultExecutors(apiApiPlaceHolderDemo))
                 .BuildDescription();
 
             services.AddSingleton<Placeholder>();
