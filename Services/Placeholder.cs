@@ -23,7 +23,16 @@ namespace ApiPlaceHolderDemo.Services
             this.executorCreator = executorCreator;
         }
 
-        public string ObterTexto(string texto)
+        public string GetTextWithCustomPlaceholders(string text, List<StringExecutor> customPlaceholders)
+        {
+            var newText = executorCreator
+                .AddRange(customPlaceholders)
+                .Build(text)
+                .Result();
+            return newText;
+        }
+
+        public string GetText(string texto)
         {
             var novoTexto = executorCreator.Build(texto)
                 .Result();
@@ -62,7 +71,7 @@ namespace ApiPlaceHolderDemo.Services
             return descricaoPlaceholders;
         }
 
-        public static List<StringExecutor> ObterExecutores(IApiPlaceHolderDemoApi geradorDeDados)
+        public static List<StringExecutor> GetExecutors(IApiPlaceHolderDemoApi geradorDeDados)
         {
             return new List<StringExecutor>()
             {
